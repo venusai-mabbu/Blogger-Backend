@@ -9,12 +9,17 @@ const jwt = require('jsonwebtoken');
 const app = express();
 
 
+// app.use(cors({
+//   origin: ['https://blogger-frontend-iota.vercel.app'],
+//   methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'PATCH', 'DELETE'],
+//   allowedHeaders: ['X-CSRF-Token', 'X-Requested-With', 'Accept', 'Accept-Version', 'Content-Length', 'Content-MD5', 'Content-Type', 'Date', 'X-Api-Version'],
+//   credentials: true
+// }));
 app.use(cors({
-  origin: ['https://blogger-frontend-iota.vercel.app/'],
-  methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'PATCH', 'DELETE'],
-  allowedHeaders: ['X-CSRF-Token', 'X-Requested-With', 'Accept', 'Accept-Version', 'Content-Length', 'Content-MD5', 'Content-Type', 'Date', 'X-Api-Version'],
-  credentials: true
+  origin: 'https://blogger-frontend-iota.vercel.app', // Allow only your frontend
+  credentials: true // Allow cookies and auth headers
 }));
+
 
 
 app.use(express.static('public'));
